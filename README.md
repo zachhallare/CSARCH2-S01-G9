@@ -60,4 +60,5 @@ The visual design of the exhibit utilizes a modern, sleek aesthetic fitting for 
 * **Typography:** Bold, sans-serif fonts for headers to emulate a tech-focused environment, paired with clean serif or readable sans-serif fonts for body text.
 * **UI Elements:** Cards feature subtle glowing borders, rounded corners, and soft drop shadows to emphasize interactivity. Navigation utilizes intuitive left/right arrow icons.
 
-**View the full interactive design mockup
+**View the full interactive design mockup:
+https://canva.link/hpok85xmm3n5rga
