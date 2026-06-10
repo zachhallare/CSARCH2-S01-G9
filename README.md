@@ -1,5 +1,7 @@
 # Computer Architecture Virtual Exhibit 2026: "Computer Architecture are Forever"
 
+**GitHub Repository:** [https://github.com/zachhallare/CSARCH2-S01-G9](https://github.com/zachhallare/CSARCH2-S01-G9)
+
 ## ARM vs x86: Interactive Architecture Explorer
 
 **Group 9**
@@ -13,11 +15,11 @@
 
 ## Topic Theme: ARM vs x86 Comparison
 
-When discussing important aspects of a computer system, many individuals tend to think about things like the central processing unit (CPU), motherboard, and random access memory (RAM). While these components are crucial, they often overshadow the many other elements that can be just as, if not more, vital to maintaining a computer’s functionality. 
+At the core of any computer system lies the Instruction Set Architecture (ISA), the critical bridge between software programs and the hardware that executes them. It is important to distinguish the ISA from general processor microarchitecture (the physical evolution and layout of the chip). Rather than dealing with physical silicon, the ISA defines the abstract programmer's model of the machine. It explicitly dictates the **assembly language**, the available **registers**, the **memory** addressing modes, and the overarching structural design.
 
-One of these overlooked factors is the **Instruction Set Architecture (ISA)**. The ISA defines various attributes—such as the allowed instructions and data types—that affect the logic behind a program’s execution. Without this abstract model, computers would essentially be worthless, as programs would cease to function without a standardized way to execute instructions. 
+The purpose of this virtual exhibit is to provide an in-depth exploration of the ISA by comparing and contrasting its two most widely used philosophies: **ARM (Reduced Instruction Set Computer - RISC)** and **x86 (Complex Instruction Set Computer - CISC)**. 
 
-The purpose of this virtual exhibit is to provide an in-depth exploration of the responsibilities that fall under the ISA by comparing and contrasting its two most widely used variations: **ARM** and **x86**. By evaluating the benefits, drawbacks, and specific use cases of each ISA, this exhibit will provide an informative and insightful experience that offers a deeper understanding of how an ISA operates and why it is a critical consideration in modern computer system design.
+By evaluating how ARM's simplified, register-heavy approach compares to x86's complex, memory-centric instructions, this project aims to provide an informative experience. Users will gain a deeper understanding of how an ISA operates at the assembly and memory levels, and why choosing between RISC and CISC architectures remains a fundamental consideration in modern computer system design.
 
 ---
 
@@ -39,8 +41,8 @@ The core of the exhibit will feature a side-by-side **Clickable Card Explorer** 
 
 1. **Initial View:** Two main cards are displayed simultaneously, each representing one architecture (ARM and x86). This side-by-side layout immediately frames the exhibit as a comparison, setting the user's expectation before any interaction begins.
 2. **Expansion Mechanics:** Upon clicking a main card, it expands to reveal a row of five smaller inner cards beneath it. Each inner card represents a specific category of information:
-   * **Overview:** The design philosophy behind each architecture (RISC vs. CISC).
-   * **Performance:** Efficiency, power consumption, and speed characteristics.
+   * **Overview:** The design philosophy behind each architecture (RISC vs. CISC, registers, and assembly approach).
+   * **Performance:** Efficiency, power consumption, and instruction execution speed.
    * **Use Cases:** Industries and environments where each architecture thrives.
    * **Key Devices:** Real-world products powered by each architecture.
    * **Pros and Cons:** The specific trade-offs of choosing one over the other.
@@ -54,10 +56,6 @@ The component is fully mobile-responsive. On smaller screens (smartphones and ta
 
 ## Tentative Style Guide Snapshot
 
-The visual design of the exhibit utilizes a modern, sleek aesthetic fitting for a deep dive into computer architecture. 
+The visual design of the exhibit utilizes a modern, sleek aesthetic fitting for a deep dive into computer architecture. Cards will feature intuitive navigation (left/right arrows) and expanding animations to handle large amounts of text smoothly.
 
-* **Color Palette:** Deep purple backgrounds (`#1A0B2E` or similar) paired with bright, neon-white text to create a high-contrast, futuristic feel.
-* **Typography:** Bold, sans-serif fonts for headers to emulate a tech-focused environment, paired with clean serif or readable sans-serif fonts for body text.
-* **UI Elements:** Cards feature subtle glowing borders, rounded corners, and soft drop shadows to emphasize interactivity. Navigation utilizes intuitive left/right arrow icons.
-
-**View the full interactive design mockup
+**View the full interactive design layout and style guide here:** 🔗 [Canva Prototype Link](https://canva.link/hpok85xmm3n5rga)
