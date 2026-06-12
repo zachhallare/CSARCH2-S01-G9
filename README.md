@@ -64,7 +64,14 @@ The component is fully **mobile-responsive**. On smaller screens, the two main c
 
 The visual design of the exhibit utilizes a modern, sleek aesthetic fitting for a deep dive into computer architecture. Cards will feature intuitive navigation (left/right arrows) and expanding animations to handle large amounts of text smoothly.
 
-**View the full interactive design layout and style guide here:** [Canva Snapshot Prototype Link](https://canva.link/hpok85xmm3n5rga)
+![Style Guide Page 1](assets/style-guide-1.png)
+![Style Guide Page 2](assets/style-guide-2.png)
+![Style Guide Page 3](assets/style-guide-3.png)
+![Style Guide Page 4](assets/style-guide-4.png)
+![Style Guide Page 5](assets/style-guide-5.png)
+![Style Guide Page 6](assets/style-guide-6.png)
+
+[Canva Snapshot Prototype Link](https://canva.link/hpok85xmm3n5rga)
 
 ---
 
@@ -75,3 +82,17 @@ Google Docs link below:
 
 [View Highlighted Revisions on Google Docs](https://docs.google.com/document/d/1aFv7ZEC7oXG_M5LDeyJp128cibDaMuXKnh5ud8JuTIg)
 
+---
+
+## Previous Revision Comments
+
+The following feedback was provided by the instructor on June 7, 2026:
+
+> "Topic tentatively approved subject to the following revisions:
+> 1.) Submit GitHub link on the next submission iteration. Proposal document 
+> should be part of the incremental readme. Style guide snapshot should be 
+> included.
+> 2.) Note that Instruction Set Architecture means the details of assembly 
+> language, registers, memory and the architecture (RISC vs CISC). Please 
+> rewrite. Architecture (processor evolution) is different from Instruction 
+> set architecture."
