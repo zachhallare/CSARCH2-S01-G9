@@ -15,11 +15,9 @@
 
 ## Topic Theme: ARM vs x86 Comparison
 
-At the core of any computer system lies the Instruction Set Architecture (ISA), the critical bridge between software programs and the hardware that executes them. It is important to distinguish the ISA from general processor microarchitecture (the physical evolution and layout of the chip). Rather than dealing with physical silicon, the ISA defines the abstract programmer's model of the machine. It explicitly dictates the **assembly language**, the available **registers**, the **memory** addressing modes, and the overarching structural design.
+When discussing important aspects of a computer system, many individuals tend to think about things like the **central processing unit (CPU)**, **motherboard**, and **random access memory (RAM)**. While these components are crucial, they often overshadow the many other elements that can be just as, if not more, vital to maintaining a computer's functionality. One of these overlooked factors is the computer's **architecture**, which defines the various attributes, such as the **representation of data types** and the **handling of memory**, that dictate how a computer operates at the fundamental level. Without the presence of this structure, computers would essentially be useless as they would not know how to interpret the data provided to them, preventing them from executing any programs.
 
-The purpose of this virtual exhibit is to provide an in-depth exploration of the ISA by comparing and contrasting its two most widely used philosophies: **ARM (Reduced Instruction Set Computer - RISC)** and **x86 (Complex Instruction Set Computer - CISC)**. 
-
-By evaluating how ARM's simplified, register-heavy approach compares to x86's complex, memory-centric instructions, this project aims to provide an informative experience. Users will gain a deeper understanding of how an ISA operates at the assembly and memory levels, and why choosing between RISC and CISC architectures remains a fundamental consideration in modern computer system design.
+As such, the purpose of this project is to provide an in-depth exploration of the importance of selecting a suitable computer architecture by comparing and contrasting the two most widely used variations: **ARM** and **x86**. By evaluating the different benefits, drawbacks, and use cases that each architecture has, the group expects to provide an informative and insightful experience that not only offers a deeper understanding of **computer design**, but also why it is such a necessary consideration when deciding on the system that is best suited for one's purposes.
 
 ---
 
@@ -27,30 +25,38 @@ By evaluating how ARM's simplified, register-heavy approach compares to x86's co
 
 Our exhibit will be built using a modern, interactive web stack designed for smooth animations and component-based architecture:
 
-* **React.js:** Serves as the primary framework for this project. React's component-based architecture makes the creation of graphical elements—and the implementation of their individual characteristics and behaviors—highly efficient.
-* **Vite:** Used as the development environment due to its lightning-fast setup and efficient compilation. Its hot-module replacement (HMR) allows code changes to reflect in real-time, streamlining the testing and development stages.
-* **Framer Motion:** Handles the complex animations within the exhibit. Its vast library of animation presets integrates perfectly with React to create smooth, app-like transitions between cards.
-* **CSS:** Utilized for custom styling, layout management, and ensuring cross-device compatibility.
+* **React.js:** Serves as the primary framework for this project. This is to leverage its component-based architecture and make the creation of graphical elements, as well as the implementation of their individual characteristics and behavior, much easier.
+* **Vite:** Used as the development environment due to its very fast setup and efficient compilation. Additionally, its ability to easily set up a local server and reflect code changes in real time would be useful during the testing stage of development.
+* **Framer Motion and CSS:** Handles the animations and styling of the elements in the project. Aside from their compatibility with React, the former has a vast library of animation presets that are applicable and could easily be implemented in the project.
 
 ---
 
 ## Proposed Interactive Element
 
-### The Clickable Card Explorer
-The core of the exhibit will feature a side-by-side **Clickable Card Explorer** that allows users to interactively compare the ARM and x86 architectures. 
+The exhibit will feature a side-by-side **Clickable Card Explorer** that allows users to interactively compare the ARM and x86 architectures. Two main cards will be displayed on screen simultaneously, each representing one architecture. This side-by-side layout immediately frames the exhibit as a comparison, setting the user's expectation before any interaction begins.
 
-1. **Initial View:** Two main cards are displayed simultaneously, each representing one architecture (ARM and x86). This side-by-side layout immediately frames the exhibit as a comparison, setting the user's expectation before any interaction begins.
-2. **Expansion Mechanics:** Upon clicking a main card, it expands to reveal a row of five smaller inner cards beneath it. Each inner card represents a specific category of information:
-   * **Overview:** The design philosophy behind each architecture (RISC vs. CISC, registers, and assembly approach).
-   * **Performance:** Efficiency, power consumption, and instruction execution speed.
-   * **Use Cases:** Industries and environments where each architecture thrives.
-   * **Key Devices:** Real-world products powered by each architecture.
-   * **Pros and Cons:** The specific trade-offs of choosing one over the other.
-3. **Flipping/Revealing Content:** Each inner card is initially shown in a closed state, displaying only its category label. Clicking an inner card flips or expands it to reveal the full content. This layered structure mirrors a physical museum exhibit, allowing visitors to choose what to engage with rather than being overwhelmed with text.
-4. **Independent Interaction:** Both main cards are independently interactive. A user can have the ARM card fully expanded while the x86 card remains closed, supporting different, self-paced learning approaches within the same interface.
+Upon clicking a main card, it expands to reveal a row of five smaller inner cards beneath it, each representing a specific category of information:
 
-### Mobile-Responsive Layout
-The component is fully mobile-responsive. On smaller screens (smartphones and tablets), the side-by-side main cards will dynamically stack vertically. The inner detail cards will adjust into a compact grid layout to remain highly readable without requiring horizontal scrolling.
+* **Overview:** the design philosophy behind each architecture
+* **Performance:** efficiency and speed characteristics
+* **Use Cases:** industries and devices in which each architecture is commonly found
+* **Key Devices:** real-world products that use each architecture
+* **Pros and Cons:** trade-offs between the two
+
+Each inner card is initially shown in a closed state, displaying only its 
+category label. Clicking an inner card flips or expands it to reveal the full 
+content for that category. The **Performance** category further features 
+**animated comparison bars** that fill dynamically upon reveal, visually 
+representing the speed and efficiency differences between the two architectures. 
+This layered structure, where a main card leads to inner cards which then lead 
+to content, mirrors the experience of browsing a physical museum exhibit, where 
+a visitor chooses what to engage with rather than being presented with 
+everything at once.
+
+Both main cards are **independently interactive**, meaning a user can have the ARM card fully expanded while the x86 card remains closed. This freedom of navigation is intentional, as it supports different learning approaches within the same interface.
+
+The component is fully **mobile-responsive**. On smaller screens, the two main cards stack vertically, and the inner cards adjust to a compact grid layout to remain readable without horizontal scrolling.
+
 
 ---
 
@@ -58,4 +64,14 @@ The component is fully mobile-responsive. On smaller screens (smartphones and ta
 
 The visual design of the exhibit utilizes a modern, sleek aesthetic fitting for a deep dive into computer architecture. Cards will feature intuitive navigation (left/right arrows) and expanding animations to handle large amounts of text smoothly.
 
-**View the full interactive design layout and style guide here:** 🔗 [Canva Prototype Link](https://canva.link/hpok85xmm3n5rga)
+**View the full interactive design layout and style guide here:** [Canva Snapshot Prototype Link](https://canva.link/hpok85xmm3n5rga)
+
+---
+
+## Proposal with Highlighted Revisions
+
+The highlighted revisions and their corresponding comments can be viewed in the 
+Google Docs link below:
+
+[View Highlighted Revisions on Google Docs](https://docs.google.com/document/d/1aFv7ZEC7oXG_M5LDeyJp128cibDaMuXKnh5ud8JuTIg)
+
