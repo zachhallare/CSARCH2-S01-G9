@@ -86,7 +86,7 @@ Google Docs link below:
 
 ## Previous Revision Comments
 
-The following feedback was provided by the instructor on June 7, 2026:
+The following feedback was provided by Sir Rog on June 7, 2026:
 
 > "Topic tentatively approved subject to the following revisions:
 > 1.) Submit GitHub link on the next submission iteration. Proposal document 
