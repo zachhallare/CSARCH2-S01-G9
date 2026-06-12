@@ -5,11 +5,11 @@
 ## ARM vs x86: Interactive Architecture Explorer
 
 **Group 9**
-* **Co, Adrian**
-* **Hallare, Zach**
-* **Javier, David**
-* **Lee, Tyrone**
-* **Tiu, Kyle**
+* **Co, Adrian Nathaniel L.**
+* **Hallare, Zach Benedict I.**
+* **Javier, David Lorenz A.**
+* **Lee, Tyrone Julius R.**
+* **Tiu, Kyle Thomas E.**
 
 ---
 
