@@ -105,14 +105,16 @@ function ChipButton({ label, accentColor, onClick }: { label: string; accentColo
         border: `1px solid ${hovered ? accentColor : `${accentColor}25`}`,
         backgroundColor: `${accentColor}06`,
         transform: hovered ? "scale(1.05)" : "scale(1)",
-        transition: "transform 0.2s ease, border-color 0.2s ease",
+        // Ambient baked back-glow behind the entire card when hovered
+        boxShadow: hovered ? `0 0 35px -10px ${accentColor}88` : "none",
+        transition: "transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease",
       }}
       onClick={onClick}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
       {/* ── Animated border trace (SVG overlay) ── */}
-      {/* Crisp moving trace with no drop-shadow glow */}
+      {/* White-hot core + multi-layered colored bloom */}
       <svg
         className="absolute inset-0 w-full h-full rounded-xl overflow-visible pointer-events-none"
         style={{ zIndex: 2 }}
@@ -125,10 +127,15 @@ function ChipButton({ label, accentColor, onClick }: { label: string; accentColo
           rx="11"
           ry="11"
           fill="none"
-          stroke={accentColor}
+          // White core when active, invisible when inactive
+          stroke={hovered ? "#ffffff" : "transparent"}
           strokeWidth="1.5"
           pathLength="1"
-          style={{ ...traceStyle }}
+          style={{
+            // Intense hardware diode bloom
+            filter: hovered ? `drop-shadow(0 0 3px ${accentColor}) drop-shadow(0 0 8px ${accentColor})` : "none",
+            ...traceStyle 
+          }}
         />
       </svg>
 
@@ -136,7 +143,7 @@ function ChipButton({ label, accentColor, onClick }: { label: string; accentColo
 
       {/* ── Inner chip body — grid brightens on hover ── */}
       <div
-        className="mx-3 rounded-lg overflow-hidden"
+        className="mx-3 rounded-lg overflow-hidden relative"
         style={{
           backgroundColor: "#0F1117",
           border: `1px solid ${accentColor}${hovered ? "40" : "12"}`,
@@ -150,16 +157,20 @@ function ChipButton({ label, accentColor, onClick }: { label: string; accentColo
           transition: "background-image 0s, border-color 0.25s ease",
         }}
       >
-        <div className="flex flex-col items-center justify-center h-full px-4 py-4">
-          {/* ── Indicator dot — powers up and pulses on hover ── */}
+        <div className="flex flex-col items-center justify-center h-full px-4 py-4 relative z-10">
+          {/* ── Indicator dot — hardware diode effect ── */}
           <div
             className="w-2 h-2 rounded-full mb-2 shrink-0"
             style={{
-              backgroundColor: accentColor,
+              // White core on hover
+              backgroundColor: hovered ? "#ffffff" : accentColor,
               opacity: hovered ? 1 : 0.45,
               animation: hovered ? "dot-pulse 1.5s ease-in-out infinite" : "none",
-              boxShadow: hovered ? `0 0 6px ${accentColor}AA` : "none",
-              transition: "opacity 0.3s ease",
+              // Bloom + localized back-glow
+              boxShadow: hovered 
+                ? `0 0 4px 1px ${accentColor}, 0 0 12px 3px ${accentColor}` 
+                : "none",
+              transition: "opacity 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease",
             }}
           />
           <span

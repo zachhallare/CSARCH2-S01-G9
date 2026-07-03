@@ -100,7 +100,9 @@ function HoverItem({
         borderRight: "1px solid rgba(255,255,255,0.05)",
         borderTop: "1px solid rgba(255,255,255,0.05)",
         borderBottom: "1px solid rgba(255,255,255,0.05)",
-        transition: "background-color 0.25s ease, border-left-color 0.25s ease",
+        // Ambient baked back-glow
+        boxShadow: hovered ? `0 0 35px -15px ${accentColor}88` : "none",
+        transition: "background-color 0.25s ease, border-left-color 0.25s ease, box-shadow 0.25s ease",
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -137,31 +139,37 @@ function ProsConsItem({
 
   return (
     <li
-      className="flex gap-2 rounded-lg p-3"
+      className="flex gap-2 rounded-lg p-3 relative"
       style={{
         backgroundColor: hovered ? `${accentColor}0D` : "rgba(15,17,23,0.4)",
         borderLeft: `2px solid ${hovered ? accentColor : "rgba(255,255,255,0.07)"}`,
         borderRight: "1px solid rgba(255,255,255,0.05)",
         borderTop: "1px solid rgba(255,255,255,0.05)",
         borderBottom: "1px solid rgba(255,255,255,0.05)",
-        transition: "background-color 0.25s ease, border-left-color 0.25s ease",
+        // Ambient baked back-glow
+        boxShadow: hovered ? `0 0 35px -15px ${accentColor}88` : "none",
+        transition: "background-color 0.25s ease, border-left-color 0.25s ease, box-shadow 0.25s ease",
       }}
       onMouseEnter={handleEnter}
       onMouseLeave={() => setHovered(false)}
     >
-      {/* Icon — remounted on hover to restart the keyframe animation */}
+      {/* Icon — white-hot core + bloom, remounted on hover */}
       <span
         key={pulseKey}
         className={`shrink-0 mt-0.5 inline-block ${hovered ? "animate-icon-pulse" : ""}`}
         style={{
-          color: iconColor,
-          filter: hovered ? `drop-shadow(0 0 5px ${iconColor}cc)` : "none",
-          transition: "filter 0.25s ease",
+          // Hardware diode core: white when active, color when inactive
+          color: hovered ? "#ffffff" : iconColor,
+          // Intense bloom filter
+          filter: hovered 
+            ? `drop-shadow(0 0 3px ${iconColor}) drop-shadow(0 0 8px ${iconColor}) drop-shadow(0 0 15px ${iconColor}AA)` 
+            : "none",
+          transition: "filter 0.25s ease, color 0.25s ease",
         }}
       >
         {icon}
       </span>
-      <span className="text-gray-300">{text}</span>
+      <span className="text-gray-300 relative z-10">{text}</span>
     </li>
   );
 }
@@ -171,7 +179,7 @@ function ProsCons({ pros, cons, accentColor }: { pros: string[]; cons: string[];
     <div className="space-y-5">
       <div>
         <h4 className="font-semibold mb-3 flex items-center gap-2" style={{ color: "#00C2D1" }}>
-          <span className="w-1 h-4 rounded-full inline-block" style={{ backgroundColor: "#00C2D1" }} />
+          <span className="w-1 h-4 rounded-full inline-block" style={{ backgroundColor: "#00C2D1", boxShadow: `0 0 8px #00C2D1` }} />
           Pros
         </h4>
         <ul className="space-y-2">
@@ -188,7 +196,7 @@ function ProsCons({ pros, cons, accentColor }: { pros: string[]; cons: string[];
       </div>
       <div>
         <h4 className="font-semibold mb-3 flex items-center gap-2" style={{ color: "#FF8C42" }}>
-          <span className="w-1 h-4 rounded-full inline-block" style={{ backgroundColor: "#FF8C42" }} />
+          <span className="w-1 h-4 rounded-full inline-block" style={{ backgroundColor: "#FF8C42", boxShadow: `0 0 8px #FF8C42` }} />
           Cons
         </h4>
         <ul className="space-y-2">
@@ -210,8 +218,8 @@ function ProsCons({ pros, cons, accentColor }: { pros: string[]; cons: string[];
 // ─── Comparison Table ─────────────────────────────────────────────────────────
 // Row hover:
 //   • Row background → 5% accent tint
+//   • Row box-shadow → Ambient back-glow
 //   • Attribute cell text transitions gray-400 → white
-// accentColor is forwarded so both ARM and x86 use the correct tint.
 
 function ComparisonTableRow({
   row,
@@ -223,10 +231,11 @@ function ComparisonTableRow({
   const [hovered, setHovered] = useState(false);
   return (
     <tr
-      className="border-b border-white/5 last:border-0"
+      className="border-b border-white/5 last:border-0 relative z-10"
       style={{
         backgroundColor: hovered ? `${accentColor}0D` : "transparent",
-        transition: "background-color 0.2s ease",
+        boxShadow: hovered ? `inset 0 0 20px -10px ${accentColor}66` : "none",
+        transition: "background-color 0.2s ease, box-shadow 0.2s ease",
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -235,7 +244,9 @@ function ComparisonTableRow({
         className="p-3 font-medium"
         style={{
           color: hovered ? "#ffffff" : "#9ca3af",
-          transition: "color 0.2s ease",
+          // Give the text itself a slight bloom on hover
+          textShadow: hovered ? `0 0 8px ${accentColor}AA` : "none",
+          transition: "color 0.2s ease, text-shadow 0.2s ease",
         }}
       >
         {row.attribute}

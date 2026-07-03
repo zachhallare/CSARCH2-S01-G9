@@ -90,20 +90,20 @@ function CircuitBoard({ hoveredArch }: { hoveredArch: HoveredArch }) {
   const armActive = hoveredArch === "arm";
   const x86Active = hoveredArch === "x86";
 
-  // Colours
-  const armStroke = armActive ? ARM_COLOR  : IDLE_COLOR;
-  const x86Stroke = x86Active ? X86_COLOR  : IDLE_COLOR;
+  // Colours: White-hot core when active, subtle panel color when idle
+  const armStroke = armActive ? "#FFFFFF"  : IDLE_COLOR;
+  const x86Stroke = x86Active ? "#FFFFFF"  : IDLE_COLOR;
 
   // Opacity: active side = full, opposite = dimmed, neither hovered = subtle
   const armOpacity = x86Active ? 0.15 : armActive ? 1 : 0.65;
   const x86Opacity = armActive ? 0.15 : x86Active ? 1 : 0.65;
 
-  // Drop-shadow glow only when active
+  // Bloom (tight glow) + Baked light (wide ambient back-glow) using the arch's accent color
   const armFilter = armActive
-    ? `drop-shadow(0 0 4px ${ARM_COLOR}cc) drop-shadow(0 0 14px ${ARM_COLOR}55)`
+    ? `drop-shadow(0 0 3px ${ARM_COLOR}) drop-shadow(0 0 8px ${ARM_COLOR}) drop-shadow(0 0 25px ${ARM_COLOR}88)`
     : "none";
   const x86Filter = x86Active
-    ? `drop-shadow(0 0 4px ${X86_COLOR}cc) drop-shadow(0 0 14px ${X86_COLOR}55)`
+    ? `drop-shadow(0 0 3px ${X86_COLOR}) drop-shadow(0 0 8px ${X86_COLOR}) drop-shadow(0 0 25px ${X86_COLOR}88)`
     : "none";
 
   // CSS transition applied to each <g> — animates stroke, opacity, filter,
