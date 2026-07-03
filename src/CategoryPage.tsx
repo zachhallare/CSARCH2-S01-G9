@@ -269,8 +269,12 @@ function ComparisonTable({ data, accentColor }: { data: typeof armData; accentCo
 
 function getFlashcard(category: string, data: typeof armData, accentColor: string): FlashCard {
   const baseFront = (
-    <div className="flex flex-col items-center text-center gap-2">
-      <span className="text-lg font-mono font-bold tracking-wider" style={{ color: accentColor }}>
+    <div className="flex flex-col items-center justify-center h-full text-center gap-3 select-none">
+      <span className="text-4xl md:text-5xl font-mono font-black tracking-widest uppercase" 
+        style={{ 
+          color: accentColor,
+          textShadow: `0 0 20px ${accentColor}44`
+        }}>
         {data.name}
       </span>
     </div>
@@ -280,7 +284,13 @@ function getFlashcard(category: string, data: typeof armData, accentColor: strin
     case "overview":
       return {
         front: baseFront,
-        back: <p className="leading-relaxed text-base text-gray-300">{data.overview}</p>,
+        back: (
+          <div className="flex flex-col justify-center h-full px-2">
+            <p className="text-justify text-base md:text-xl leading-relaxed tracking-wide text-gray-300 font-sans antialiased opacity-90">
+              {data.overview}
+            </p>
+          </div>
+        ),
       };
     case "performance":
       return {
