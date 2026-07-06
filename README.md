@@ -96,3 +96,9 @@ The following feedback was provided by Sir Rog on June 7, 2026:
 > language, registers, memory and the architecture (RISC vs CISC). Please 
 > rewrite. Architecture (processor evolution) is different from Instruction 
 > set architecture."
+
+## DEVELOPMENT DOCUMENTATION FOR MID-MILESTONE SUBMISSION
+
+For this milestone, a large portion of the project described in the Proposed Interactive Element portion above. The cards for both ARM and x86 have been constructed and detailed with insightful knowledge that the group believes can enlighten even people without technical expertise on the matter. The exhibit itself was developed very efficiently through the use of Vite, which greatly enhanced the groups ability to collaboratively work on the project without impeding one another. The animations and overall aesthetic of the exhibit has been formalized and implemented in this version of the exhibit as well through the use of the framer-motion Javascript library and CSS techniques. 
+
+With all of this being said, there is still active work being done to refine the exhibit. Improvements are being made to make the exhibit more accessible, user-friendly, and easy to navigate. Additionally, while the exhibit is fully functional on desktop, how it translates to mobile devices is being further optimized for a more seemless transition. 
